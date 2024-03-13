@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }} - {{ title }}
+{% endblock %}
+
+{% block content %}
+<div>
+    <div>
+        <h2>Добро пожаловать в раздел обуви</h2>
+    </div>
+    <div>
+
+        <table border="1px solid grey">
+            <tr>
+                <th>Уникальный номер</th>
+                <th>Наименование</th>
+                <th>Марка</th>
+                <th>Цена</th>
+                <th>Размер</th>
+            </tr>
+            {% for user in users%}
+            <tr>
+                <td>{{ user.id}}</td>
+                <td>{{ user.name}}</td>
+                <td>{{ user.brand}}</td>
+                <td>{{ user.price}}</td>
+                <td>{{ user.size}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
